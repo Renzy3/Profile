@@ -1,0 +1,27 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;1,500;1,600&family=Fredoka:wght@600;700&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --bg-dark: #2a2b3c;
+  --bg-light: #2f3042;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  color: white;
+}
+
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4a4b5c;
+  border-radius: 4px;
+}
