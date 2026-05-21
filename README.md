@@ -1,4 +1,4 @@
-# Personal Bio Links Profile
+# Personal Profile
 
 A personalized, highly responsive bio link and profile website designed to showcase my identity, interests, and social media presence in one clean, interactive space. 
 
@@ -24,6 +24,3 @@ The application features a beautifully integrated **Light/Dark Mode toggle**, al
 
 ---
 
-## 📄 License
-
-This profile web application is open-source and available under the [MIT License](LICENSE).
