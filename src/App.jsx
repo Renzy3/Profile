@@ -25,21 +25,22 @@ export default function App() {
     img.src = activeProfile;
     img.onload = () => {
       const canvas = document.createElement('canvas');
-      const size = Math.min(img.width, img.height);
-      canvas.width = size;
-      canvas.height = size;
+      const faviconSize = 128; // Restrict size to prevent massive base64 strings
+      canvas.width = faviconSize;
+      canvas.height = faviconSize;
       const ctx = canvas.getContext('2d');
       
       // Create a perfect circle mask
       ctx.beginPath();
-      ctx.arc(size / 2, size / 2, size / 2, 0, Math.PI * 2);
+      ctx.arc(faviconSize / 2, faviconSize / 2, faviconSize / 2, 0, Math.PI * 2);
       ctx.closePath();
       ctx.clip();
       
-      // Draw the image centered
+      // Draw the image centered and scaled down
+      const size = Math.min(img.width, img.height);
       const xOffset = (img.width - size) / 2;
       const yOffset = (img.height - size) / 2;
-      ctx.drawImage(img, xOffset, yOffset, size, size, 0, 0, size, size);
+      ctx.drawImage(img, xOffset, yOffset, size, size, 0, 0, faviconSize, faviconSize);
       
       // Apply the circular canvas output as the browser favicon
       let link = document.querySelector("link[rel~='icon']");
