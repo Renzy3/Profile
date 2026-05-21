@@ -6,6 +6,8 @@ import MusicPlayer from './components/MusicPlayer'
 import LinksSection from './components/LinksSection'
 import bgDark from './assets/background.gif'
 import bgLight from './assets/background-light.gif'
+import profilePic from './assets/profile.jpg'
+import profileLightPic from './assets/profile-light.png'
 
 export default function App() {
   const [isLightMode, setIsLightMode] = useState(false);
@@ -16,6 +18,39 @@ export default function App() {
     } else {
       document.body.classList.remove('light-mode');
     }
+
+    // Dynamic Circular Favicon Generator
+    const activeProfile = isLightMode ? profileLightPic : profilePic;
+    const img = new Image();
+    img.src = activeProfile;
+    img.onload = () => {
+      const canvas = document.createElement('canvas');
+      const size = Math.min(img.width, img.height);
+      canvas.width = size;
+      canvas.height = size;
+      const ctx = canvas.getContext('2d');
+      
+      // Create a perfect circle mask
+      ctx.beginPath();
+      ctx.arc(size / 2, size / 2, size / 2, 0, Math.PI * 2);
+      ctx.closePath();
+      ctx.clip();
+      
+      // Draw the image centered
+      const xOffset = (img.width - size) / 2;
+      const yOffset = (img.height - size) / 2;
+      ctx.drawImage(img, xOffset, yOffset, size, size, 0, 0, size, size);
+      
+      // Apply the circular canvas output as the browser favicon
+      let link = document.querySelector("link[rel~='icon']");
+      if (!link) {
+        link = document.createElement('link');
+        link.rel = 'icon';
+        document.head.appendChild(link);
+      }
+      link.type = 'image/png';
+      link.href = canvas.toDataURL('image/png');
+    };
   }, [isLightMode]);
 
   return (
