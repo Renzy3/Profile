@@ -5,12 +5,12 @@ import profileLightPic from '../assets/profile-light.png'
 
 export default function ProfileCard({ isLightMode, setIsLightMode }) {
   return (
-    <div className="flex flex-col sm:flex-row items-center w-full mb-12 gap-8 sm:gap-0">
+    <div className="flex flex-col lg:flex-row items-center w-full mb-12 gap-8 lg:gap-0">
       {/* 1. Avatar (Left) */}
-      <div className="flex-1 flex justify-start">
+      <div className="flex-1 flex justify-center lg:justify-start w-full">
         <div 
           onClick={() => setIsLightMode(!isLightMode)}
-          className={`relative w-[260px] h-[260px] bg-[#1a1a20] rounded-[56px] overflow-hidden shrink-0 group cursor-pointer hover:scale-[1.03] transition-all duration-500 ${isLightMode ? 'shadow-[0_0_30px_rgba(217,70,239,0.4)]' : 'shadow-xl'}`}
+          className={`relative w-[180px] h-[180px] lg:w-[260px] lg:h-[260px] bg-[#1a1a20] rounded-[40px] lg:rounded-[56px] overflow-hidden shrink-0 group cursor-pointer hover:scale-[1.03] transition-all duration-500 ${isLightMode ? 'shadow-[0_0_30px_rgba(217,70,239,0.4)]' : 'shadow-xl'}`}
         >
           {/* Base Dark Image */}
           <img 
@@ -52,17 +52,21 @@ export default function ProfileCard({ isLightMode, setIsLightMode }) {
       </div>
 
       {/* 2. Info / Text (Center) */}
-      <div className="flex-1 flex flex-col items-center justify-center">
-        <h2 className={`text-[80px] leading-none mb-2 font-['Fredoka'] tracking-wide drop-shadow-lg transition-colors duration-500 ${isLightMode ? 'text-slate-800' : 'text-white'}`}>lorenz</h2>
-        <p className={`text-[28px] font-medium transition-colors duration-500 ${isLightMode ? 'text-slate-500' : 'text-[#a1a1aa]'}`}>@shiryuu</p>
+      <div className="flex-1 flex flex-col items-center justify-center w-full">
+        <h2 className={`text-[50px] lg:text-[80px] leading-none mb-2 font-['Fredoka'] tracking-wide drop-shadow-lg transition-colors duration-500 ${isLightMode ? 'text-slate-800' : 'text-white'}`}>lorenz</h2>
+        <p className={`text-[20px] lg:text-[28px] font-medium transition-colors duration-500 ${isLightMode ? 'text-slate-500' : 'text-[#a1a1aa]'}`}>@shiryuu</p>
       </div>
 
       {/* 3. Badges (Right) */}
-      <div className="flex-1 flex justify-end gap-3 sm:gap-4 flex-wrap sm:flex-nowrap">
-        <div className={`w-20 h-20 shrink-0 rounded-full flex items-center justify-center border text-[16px] font-bold transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(244,114,182,0.5)] cursor-pointer ${isLightMode ? 'bg-white border-pink-200 text-slate-700 shadow-sm' : 'bg-[#323344] border-white/5 shadow-[inset_0_2px_6px_rgba(0,0,0,0.3)] text-gray-200'}`}>INFP</div>
-        <div className={`w-20 h-20 shrink-0 rounded-full flex items-center justify-center border text-[40px] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(244,114,182,0.5)] cursor-pointer ${isLightMode ? 'bg-white border-pink-200 text-[#d946ef] shadow-sm' : 'bg-[#323344] border-white/5 shadow-[inset_0_2px_6px_rgba(0,0,0,0.3)] text-[#a78bfa]'}`}>♐</div>
-        <div className={`fi fi-jp fis shrink-0 rounded-full border transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(244,114,182,0.5)] cursor-pointer ${isLightMode ? 'border-pink-200 shadow-sm' : 'border-white/5 shadow-[inset_0_2px_6px_rgba(0,0,0,0.3)]'}`} style={{ width: '5rem', height: '5rem', backgroundSize: 'cover', backgroundPosition: 'center', display: 'block' }} />
-        <div className={`fi fi-kr fis shrink-0 rounded-full border transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(244,114,182,0.5)] cursor-pointer ${isLightMode ? 'border-pink-200 shadow-sm' : 'border-white/5 shadow-[inset_0_2px_6px_rgba(0,0,0,0.3)]'}`} style={{ width: '5rem', height: '5rem', backgroundSize: 'cover', backgroundPosition: 'center', display: 'block' }} />
+      <div className="flex-1 flex items-center justify-center lg:justify-end gap-3 lg:gap-4 flex-wrap lg:flex-nowrap w-full">
+        <div className={`w-16 h-16 lg:w-20 lg:h-20 shrink-0 rounded-full flex items-center justify-center border text-[14px] lg:text-[16px] font-bold transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(244,114,182,0.5)] cursor-pointer ${isLightMode ? 'bg-white border-pink-200 text-slate-700 shadow-sm' : 'bg-[#323344] border-white/5 shadow-[inset_0_2px_6px_rgba(0,0,0,0.3)] text-gray-200'}`}>INFP</div>
+        <div className={`w-16 h-16 lg:w-20 lg:h-20 shrink-0 rounded-full flex items-center justify-center border text-[32px] lg:text-[40px] transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(244,114,182,0.5)] cursor-pointer ${isLightMode ? 'bg-white border-pink-200 text-[#d946ef] shadow-sm' : 'bg-[#323344] border-white/5 shadow-[inset_0_2px_6px_rgba(0,0,0,0.3)] text-[#a78bfa]'}`}>♐</div>
+        <div className={`w-16 h-16 lg:w-20 lg:h-20 shrink-0 rounded-full overflow-hidden flex items-center justify-center border transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(244,114,182,0.5)] cursor-pointer ${isLightMode ? 'bg-white border-pink-200 shadow-sm' : 'bg-[#323344] border-white/5 shadow-[inset_0_2px_6px_rgba(0,0,0,0.3)]'}`}>
+          <div className="fi fi-jp fis" style={{ width: '100%', height: '100%', backgroundSize: 'cover', backgroundPosition: 'center' }} />
+        </div>
+        <div className={`w-16 h-16 lg:w-20 lg:h-20 shrink-0 rounded-full overflow-hidden flex items-center justify-center border transition-all duration-300 hover:scale-105 hover:shadow-[0_0_25px_rgba(244,114,182,0.5)] cursor-pointer ${isLightMode ? 'bg-white border-pink-200 shadow-sm' : 'bg-[#323344] border-white/5 shadow-[inset_0_2px_6px_rgba(0,0,0,0.3)]'}`}>
+          <div className="fi fi-kr fis" style={{ width: '100%', height: '100%', backgroundSize: 'cover', backgroundPosition: 'center' }} />
+        </div>
       </div>
     </div>
   )

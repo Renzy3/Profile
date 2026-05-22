@@ -72,16 +72,16 @@ export default function App() {
       </div>
 
       {/* Main Card */}
-      <div className={`w-[95%] max-w-[1200px] rounded-[48px] p-8 sm:p-12 shadow-2xl relative z-10 border transition-all duration-700 ${isLightMode ? 'bg-white/90 backdrop-blur-xl shadow-pink-200/50 border-white/50' : 'bg-[#222431] shadow-black/20 border-white/[0.03]'}`}>
+      <div className={`w-[95%] max-w-[1200px] rounded-[48px] p-5 sm:p-12 shadow-2xl relative z-10 border transition-all duration-700 ${isLightMode ? 'bg-white/90 backdrop-blur-xl shadow-pink-200/50 border-white/50' : 'bg-[#222431] shadow-black/20 border-white/[0.03]'}`}>
 
         <ProfileCard isLightMode={isLightMode} setIsLightMode={setIsLightMode} />
 
         {/* Bio */}
-        <div className={`relative text-center mb-10 px-6 sm:px-10 py-8 rounded-[24px] border shadow-sm max-w-[800px] mx-auto transition-all duration-700 ${isLightMode ? 'bg-slate-50/50 border-slate-200 shadow-pink-100' : 'bg-white/[0.015] border-white/[0.05]'}`}>
+        <div className={`relative text-center mb-10 px-4 sm:px-10 py-8 rounded-[24px] border shadow-sm max-w-[800px] mx-auto transition-all duration-700 ${isLightMode ? 'bg-slate-50/50 border-slate-200 shadow-pink-100' : 'bg-white/[0.015] border-white/[0.05]'}`}>
           {/* Top highlight bar */}
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 h-[2px] bg-gradient-to-r from-[#d946ef] to-[#8b5cf6] rounded-full" />
 
-          <p className={`text-[17px] italic leading-[1.8] font-light tracking-wide transition-colors duration-500 ${isLightMode ? 'text-slate-600' : 'text-[#e5e7eb]'}`}>
+          <p className={`text-[15px] sm:text-[17px] italic leading-[1.8] font-light tracking-wide transition-colors duration-500 ${isLightMode ? 'text-slate-600' : 'text-[#e5e7eb]'}`}>
             "hii guys! ૮꒰ ˶• ༝ •˶꒱ა I'm lorenz. Welcome to my profile where I share my love for
             <br className="hidden sm:block" />
             anime, kpop, and my dream travels to Japan and Korea!🌸 ✈️ ✨"

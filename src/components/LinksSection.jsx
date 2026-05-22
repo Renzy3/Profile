@@ -56,7 +56,7 @@ export default function LinksSection({ isLightMode }) {
           target="_blank"
           rel="noopener noreferrer"
           key={link.name}
-          className={`group relative w-full py-[18px] flex items-center justify-center rounded-[24px] border font-['Fredoka'] font-semibold text-[17px] lowercase tracking-wider transition-all duration-500 hover:scale-[1.03] cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.12)]
+          className={`group relative w-full py-4 sm:py-[18px] flex items-center justify-center rounded-[24px] border font-['Fredoka'] font-semibold text-[15px] sm:text-[17px] lowercase tracking-wider transition-all duration-500 hover:scale-[1.03] cursor-pointer shadow-[0_2px_8px_rgba(0,0,0,0.12)]
             ${isLightMode
               ? link.lightClass
               : 'bg-[#2a2b38] border-white/[0.04] text-white shadow-black/20'
@@ -64,7 +64,7 @@ export default function LinksSection({ isLightMode }) {
             ${link.hoverClass}
           `}
         >
-          <div className="absolute left-6 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
+          <div className="absolute left-4 sm:left-6 opacity-80 group-hover:opacity-100 transition-opacity duration-300">
             {link.icon}
           </div>
           <span>{link.name}</span>
